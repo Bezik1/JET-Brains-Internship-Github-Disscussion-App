@@ -1,23 +1,37 @@
 .modal-nav {
+    z-index: 11;
     position: fixed;
-    width: 40vw;
-    height: 8%;
+    right: 5%;
+    top: 2.5%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: right;
-    -webkit-app-region: drag;
 }
 
 .issue-modal {
-    width: 40vw;
-    height: 80vh;
+    top: 2%;
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
     background-color: #141121;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     padding: 20px;
+    border-radius: 25px;
+}
+
+.issue-modal::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .comments-container {
-    width: 50%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .close-icon {
@@ -25,5 +39,19 @@
     width: 40px;
     height: 40px;
     margin: 20px;
+
     cursor: pointer;
+}
+
+.issue-body {
+    width: 90%;
+    display: flex;
+    gap: 20px;
+}
+
+.issue-body-img {
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
 }

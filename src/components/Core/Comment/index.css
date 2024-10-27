@@ -1,0 +1,38 @@
+.comment {
+    width: 80vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+}
+
+.comment-body {
+    border-radius: 25px;
+    border: 2px solid #7b30dd;
+    padding: 15px;
+}
+
+.issue-body-img {
+    border-radius: 25px;
+    border: 2px solid #7b30dd;
+    padding: 10px;
+}
+
+.reactions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.reaction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 20px;
+}
+
+.reaction-img {
+    color: #f00;
+}

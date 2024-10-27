@@ -26,6 +26,7 @@ export type IssueResponse = {
         id: number
         login: string
         avatar_url: string
+        html_url: string
     }
     i: number
 }
@@ -35,9 +36,9 @@ export interface CommentResponse {
     body: string;
     created_at: string;
     user: {
-        login: string;
-        avatar_url: string;
-        html_url: string;
+        id: number
+        login: string
+        avatar_url: string
     };
     reactions: Reactions
 }

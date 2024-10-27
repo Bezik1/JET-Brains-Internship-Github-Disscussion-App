@@ -37,7 +37,7 @@ export const useModal = () =>{
         setModal({
             i,
             visible: true,
-            x: clientX > 0.65 * window.innerWidth ? 0.7*clientX-Math.abs(window.innerWidth-clientX) : clientX,
+            x: clientX > 0.6 * window.innerWidth ? 0.5*clientX-Math.abs(window.innerWidth-clientX) : clientX,
             y: 0.1*clientY,
         })
     }

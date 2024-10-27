@@ -8,7 +8,7 @@ import { DescriptionText } from "../../UI/DescriptionText"
 import { useModal } from "../../../contexts/ModalContext"
 import IssueModal from "../IssueModal"
 
-const Issue = ({ title, created_at, user, i, number } : IssueResponse) =>{
+const Issue = ({ id, reactions, title, body, created_at, user, i, number } : IssueResponse) =>{
     const { visible,i: modalIndex, openModal } = useModal()
 
     return (
@@ -32,7 +32,14 @@ const Issue = ({ title, created_at, user, i, number } : IssueResponse) =>{
                 </div>
                 <div className="gradient" />
             </div>
-            {(visible && modalIndex === i) && <IssueModal issueIndex={number} />}
+            {(visible && modalIndex === i) && <IssueModal
+                                                issueBody={body}
+                                                user={user}
+                                                created_at={created_at}
+                                                id={id}
+                                                reactions={reactions}
+                                                issueIndex={number}
+                                            />}
         </>
     )
 }

@@ -3,10 +3,10 @@ import { ParentProps } from "../../../types/Props"
 import "./index.css"
 
 export const Modal = ({ children, className } : ParentProps & { className?: string }) =>{
-    const { x, y, visible } = useModal()
+    const { visible } = useModal()
 
     return visible && (
-        <div className={`modal ${className}`} style={{ position: 'absolute', top: y, left: x }}>
+        <div className={`modal ${className}`}>
             {children}
         </div>
     )

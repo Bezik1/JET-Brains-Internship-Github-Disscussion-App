@@ -1,0 +1,9 @@
+.close-icon {
+    transition: .5s;
+}
+
+.close-icon:hover {
+    transform: scale(1.2);
+    color: #ba85eb;
+    transition: .5s;
+}
