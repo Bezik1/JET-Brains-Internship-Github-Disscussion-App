@@ -3,29 +3,37 @@ import "./index.css"
 import { IssueResponse } from "../../../types/Responses"
 import ClockIcon from "../../SVG/Clock"
 import UserIcon from "../../SVG/User"
-import { TITLE_MAX_SIZE } from "../../const/text"
+import { TextTitle } from "../../UI/TitleText"
+import { DescriptionText } from "../../UI/DescriptionText"
+import { useModal } from "../../../contexts/ModalContext"
+import IssueModal from "../IssueModal"
 
-const Issue = ({ title, created_at, user } : IssueResponse) =>{
-    const titleLengthCondition = title.length > TITLE_MAX_SIZE-1 && "..."
+const Issue = ({ title, created_at, user, i, number } : IssueResponse) =>{
+    const { visible,i: modalIndex, openModal } = useModal()
 
     return (
-        <div className="issue">
-            <img className="issue-img" src={user.avatar_url} />
-            <div className="description">
-                <div className="title">
-                    {title.substring(0, TITLE_MAX_SIZE)}{titleLengthCondition && "..." }
+        <>
+            <div className="issue" onClick={e => openModal(e, i)}>
+                <img className="issue-img" src={user.avatar_url} />
+                <div className="card-info">
+                    <TextTitle className="issue-title" title={title} />
+                    <div className="descriptions">
+                        <DescriptionText
+                            icon={<UserIcon className="user-img" />}
+                            text={user.login}
+                            className="user"
+                        />
+                        <DescriptionText
+                            icon={<ClockIcon className="date-img" />}
+                            text={created_at}
+                            className="date"
+                        />
+                    </div>
                 </div>
-                <div className="user">
-                    <UserIcon className="user-img" />
-                    <div className="user-login">{user.login}</div>
-                </div>
-                <div className="date">
-                    <ClockIcon className="date-img" />
-                    <div className="date-title">{created_at}</div>
-                </div>
+                <div className="gradient" />
             </div>
-            <div className="animation-pointer" />
-        </div>
+            {(visible && modalIndex === i) && <IssueModal issueIndex={number} />}
+        </>
     )
 }
 

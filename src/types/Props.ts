@@ -5,6 +5,13 @@ export type Repository = {
     name: string
 }
 
+export type Modal = {
+    i: number
+    visible: boolean
+    x: number
+    y: number
+}
+
 export type ParentProps = {
     children: ReactNode
 }

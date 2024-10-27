@@ -11,6 +11,8 @@ export type RepoDataResponse = {
 
 export type IssueResponse = {
     id: number
+    number: number
+    issue_number: number
     title: string
     html_url: string
     body: string
@@ -25,6 +27,19 @@ export type IssueResponse = {
         login: string
         avatar_url: string
     }
+    i: number
+}
+
+export interface CommentResponse {
+    id: number;
+    body: string;
+    created_at: string;
+    user: {
+        login: string;
+        avatar_url: string;
+        html_url: string;
+    };
+    reactions: Reactions
 }
 
 export type Reactions = {

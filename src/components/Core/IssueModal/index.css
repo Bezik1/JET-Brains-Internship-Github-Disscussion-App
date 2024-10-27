@@ -1,0 +1,29 @@
+.modal-nav {
+    position: fixed;
+    width: 40vw;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    -webkit-app-region: drag;
+}
+
+.issue-modal {
+    width: 40vw;
+    height: 80vh;
+    background-color: #141121;
+    display: flex;
+    padding: 20px;
+}
+
+.comments-container {
+    width: 50%;
+}
+
+.close-icon {
+    color: #7b30dd;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    cursor: pointer;
+}
