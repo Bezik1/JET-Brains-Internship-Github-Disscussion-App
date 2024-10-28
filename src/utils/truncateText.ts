@@ -1,4 +1,4 @@
-import { MAX_TEXT_LINE_SIZE } from "../components/const/text";
+import { MAX_TEXT_LINE_SIZE } from "../const/text";
 
 export const truncateText = (text: string): string => {
     if (text.length <= MAX_TEXT_LINE_SIZE) {
