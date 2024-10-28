@@ -6,6 +6,7 @@ import { IssueResponse } from "../../../types/Responses"
 import Issue from "../Issue"
 import { ModalProvider } from "../../../contexts/ModalContext"
 import Title from "../../UI/Title"
+import LoadingGate from "../../UI/LoadingGate"
 
 const IssuesList = ({ name, owner } : Repository) =>{
     const { data: issues, loading } = useFetch<IssueResponse[]>(`/repos/${owner}/${name}/issues`)
@@ -13,13 +14,13 @@ const IssuesList = ({ name, owner } : Repository) =>{
     return (
         <div className="issues-list">
             <Title>{name}</Title>
-            {loading
-                ? <>Loading...</>
-                : <div className="issues-container">
+            <LoadingGate loading={loading}>
+                <div className="issues-container">
                     <ModalProvider>
                         {issues != null && issues.map((issue, i) => <Issue {...issue} i={i}/>)}
                     </ModalProvider>
-            </div>}
+                </div>
+            </LoadingGate>
         </div>
     )
 }
