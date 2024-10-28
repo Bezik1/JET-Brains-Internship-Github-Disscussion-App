@@ -15,7 +15,6 @@ const IssueModal = ({ id, issueIndex , issueBody, user, created_at, reactions} :
         `https://api.github.com/repos/${repository.owner}/${repository.name}/issues/${issueIndex}/comments`
     );
 
-
     return (
         <Modal className="issue-modal">
             <nav className="modal-nav">

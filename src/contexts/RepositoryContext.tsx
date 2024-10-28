@@ -12,8 +12,8 @@ const RepositoryContext = createContext<RepositoryContextType>({
 
 export const RepositoryProvider = ({ children } : ParentProps) =>{
     const [repository, setRepository] = useState<Repository>({
-        name: "react",
-        owner: "facebook",
+        name: "meshrcnn",
+        owner: "facebookresearch",
     })
 
     return (
