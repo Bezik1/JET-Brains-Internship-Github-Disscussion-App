@@ -1,6 +1,6 @@
 # 🚀 JET-Brains Internship GitHub Discussion App
 
-Welcome to the **JET-Brains Internship GitHub Discussion App**! This project is designed to enhance discussions on GitHub by providing a user-friendly interface for reading and writing comments in Markdown format.
+Welcome to the **JET-Brains Internship GitHub Discussion App**! This project is designed to enhance discussions on GitHub by providing a user-friendly interface for reading comments in Markdown format.
 
 ## 📦 Features
 
@@ -17,7 +17,7 @@ The application is organized into the following folders:
 
 ## 🔌 Data Fetching
 
-I implemented a custom hook called **useFetch**, which accepts a type argument and is optimally designed for efficient data retrieval. This hook enhances the application's performance by managing API calls effectively.
+I implemented a custom hook called **useFetch**, which accepts a type argument and is optimally designed for efficient data retrieval. This hook enhances the application's performance by managing API calls effectively by using asynchronic operators like async / await and by using githubClient which i got by **axios** library request.
 
 ## 🛠️ Technologies Used
 
@@ -32,6 +32,9 @@ Initially, I faced challenges with formatting comments in Markdown. However, by 
 ## 🧩 Installation
 
 To get started with the project, clone the repository and install the dependencies:
+
+## 🚀 Run
+To run application you must type `npm run dev`
 
 ```bash
 git clone https://github.com/Bezik1/JET-Brains-Internship-Github-Disscussion-App.git
