@@ -5,15 +5,14 @@ import { Repository } from "../../../types/Props"
 import { IssueResponse } from "../../../types/Responses"
 import Issue from "../Issue"
 import { ModalProvider } from "../../../contexts/ModalContext"
+import Title from "../../UI/Title"
 
 const IssuesList = ({ name, owner } : Repository) =>{
     const { data: issues, loading } = useFetch<IssueResponse[]>(`/repos/${owner}/${name}/issues`)
     console.log(issues)
     return (
         <div className="issues-list">
-            <div className="issues-title-container">
-                <h1 className="issues-title">{name}</h1>
-            </div>
+            <Title>{name}</Title>
             {loading
                 ? <>Loading...</>
                 : <div className="issues-container">

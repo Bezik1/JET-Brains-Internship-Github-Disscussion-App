@@ -37,6 +37,8 @@ const mapEmoji = (emoji: string): string =>{
 const Comment = (comment : CommentResponse) =>{
     const reactionsArray = Object.entries(comment.reactions).filter(key => key[0] != "total_count" && key[0] != "url")
 
+    console.log(comment.body)
+
     return (
         <div className="comment">
             <img className="issue-body-img" src={comment.user.avatar_url} />
