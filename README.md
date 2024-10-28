@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# 🚀 JET-Brains Internship GitHub Discussion App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **JET-Brains Internship GitHub Discussion App**! This project is designed to enhance discussions on GitHub by providing a user-friendly interface for reading and writing comments in Markdown format.
 
-Currently, two official plugins are available:
+## 📦 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Animations**: I utilized the **Framer** library to add smooth animations throughout the application, enhancing the overall user experience.
+- **Markdown Support**: Comments are rendered using **ReactMarkdown**, allowing users to write and view comments in Markdown format.
+- **Error Management**: The application employs an **Alert** component for efficient error handling, ensuring users are informed of any issues that may arise.
+  
+## 🗂️ Project Structure
 
-## Expanding the ESLint configuration
+The application is organized into the following folders:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Core**: Contains application-specific components that are crucial for the core functionality.
+- **UI**: Houses reusable components, promoting better code organization and reuse across the application.
 
-- Configure the top-level `parserOptions` property like this:
+## 🔌 Data Fetching
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+I implemented a custom hook called **useFetch**, which accepts a type argument and is optimally designed for efficient data retrieval. This hook enhances the application's performance by managing API calls effectively.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🛠️ Technologies Used
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **React**
+- **Vite**
+- **TypeScript**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📜 Markdown Formatting
+
+Initially, I faced challenges with formatting comments in Markdown. However, by referring to the documentation of the **react-markdown** library, I was able to resolve these issues and successfully implement the required formatting.
+
+## 🧩 Installation
+
+To get started with the project, clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/Bezik1/JET-Brains-Internship-Github-Disscussion-App.git
+cd JET-Brains-Internship-Github-Disscussion-App
+npm install
