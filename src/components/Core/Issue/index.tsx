@@ -7,6 +7,7 @@ import { TextTitle } from "../../UI/TitleText"
 import { DescriptionText } from "../../UI/DescriptionText"
 import { useModal } from "../../../contexts/ModalContext"
 import IssueModal from "../IssueModal"
+import { formatDate } from "../../../utils/formatDate"
 
 const Issue = ({ id, reactions, title, body, created_at, user, i, number } : IssueResponse) =>{
     const { visible,i: modalIndex, openModal } = useModal()
@@ -25,7 +26,7 @@ const Issue = ({ id, reactions, title, body, created_at, user, i, number } : Iss
                         />
                         <DescriptionText
                             icon={<ClockIcon className="date-img" />}
-                            text={created_at}
+                            text={formatDate(created_at)}
                             className="date"
                         />
                     </div>

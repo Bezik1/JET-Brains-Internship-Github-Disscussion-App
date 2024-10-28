@@ -5,6 +5,7 @@ import { mapEmoji } from "../../../utils/mapEmoji";
 import { truncateText } from "../../../utils/truncateText";
 import { DescriptionText } from "../../UI/DescriptionText";
 import ClockIcon from "../../SVG/Clock";
+import { formatDate } from "../../../utils/formatDate";
 
 const Comment = (comment : CommentResponse) => {
     const reactionsArray = Object.entries(comment.reactions).filter(
@@ -25,13 +26,16 @@ const Comment = (comment : CommentResponse) => {
                 <footer className="comment-footer">
                     <div className="reactions">
                         {reactionsArray.map(([reaction, count], index) => (
-                            <div className="reaction" key={index}>
+                            <div
+                                className="reaction"
+                                key={index}
+                            >
                                 <div className="reaction-img">{mapEmoji(reaction)}</div>
                                 <div className="reaction-value">{count}</div>
                             </div>
                         ))}
                     </div>
-                    <DescriptionText className="comment-description" icon={<ClockIcon />} text={comment.created_at} />
+                    <DescriptionText className="comment-description" icon={<ClockIcon />} text={formatDate(comment.created_at)} />
                 </footer>
             </div>
         </div>

@@ -11,8 +11,9 @@
 
 .issue-modal {
     top: 2%;
+    left: 1%;;
     position: absolute;
-    width: 96vw;
+    width: 95vw;
     height: 90vh;
     background-color: #141121;
     overflow-y: scroll;

@@ -7,7 +7,7 @@ import { useRepository } from "../../../contexts/RepositoryContext"
 export const RepoForm = () =>{
     const repositoryInputRef = useRef<HTMLInputElement>(null!)
     const ownerInputRef = useRef<HTMLInputElement>(null!)
-    const { setRepository } = useRepository()
+    const { repository, setRepository } = useRepository()
     const navigate = useNavigate()
 
     const handleSubmit = () =>{
@@ -23,10 +23,20 @@ export const RepoForm = () =>{
             <Title className="repository-form-title">Browser</Title>
             <div className="repository-inputs">
                 <div className="input-container">
-                    <input ref={repositoryInputRef} placeholder="Repository" className="input input-owner" />
+                    <input
+                        ref={repositoryInputRef}
+                        defaultValue={repository.name}
+                        placeholder="Repository"
+                        className="input input-owner"
+                    />
                 </div>
                 <div className="input-container">
-                    <input ref={ownerInputRef} placeholder="Owner" className="input input-owner" />
+                    <input
+                        ref={ownerInputRef}
+                        defaultValue={repository.owner}
+                        placeholder="Owner"
+                        className="input input-owner"
+                    />
                 </div>
             </div>
             <div className="submit-container">
