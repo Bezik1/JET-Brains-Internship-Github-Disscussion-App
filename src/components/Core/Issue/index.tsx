@@ -8,8 +8,9 @@ import { DescriptionText } from "../../UI/DescriptionText"
 import { useModal } from "../../../contexts/ModalContext"
 import IssueModal from "../IssueModal"
 import { formatDate } from "../../../utils/formatDate"
+import KeyIcon from "../../SVG/Key"
 
-const Issue = ({ id, reactions, title, body, created_at, user, i, number } : IssueResponse) =>{
+const Issue = ({ id, reactions, title, body, created_at, user, i, number, state } : IssueResponse) =>{
     const { visible,i: modalIndex, openModal } = useModal()
 
     return (
@@ -19,6 +20,11 @@ const Issue = ({ id, reactions, title, body, created_at, user, i, number } : Iss
                 <div className="card-info">
                     <TextTitle className="issue-title" title={title} />
                     <div className="descriptions">
+                        <DescriptionText
+                            icon={<KeyIcon className="key-icon" />}
+                            text={state}
+                            className="user"
+                        />
                         <DescriptionText
                             icon={<UserIcon className="user-img" />}
                             text={user.login}

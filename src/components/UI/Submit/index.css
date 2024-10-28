@@ -1,0 +1,15 @@
+.submit-container {
+    cursor: pointer;
+    margin-top: 5%;
+}
+
+.sub-btn {
+    transition: .5s;
+    width: 16vw;
+    height: 50px;
+    position: absolute;
+    z-index: 0;
+    margin-left: 0.5%;
+    margin-top: -0.8%;
+    border: 2px dashed #f119cd;
+}

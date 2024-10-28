@@ -25,6 +25,8 @@ const IssuesList = ({ name, owner } : Repository) =>{
         }),
     };
 
+    console.log(issues)
+
     return (
         <div className="issues-list">
             <PrevArrow onClick={() => navigate('/')} className="prev-arrow" />

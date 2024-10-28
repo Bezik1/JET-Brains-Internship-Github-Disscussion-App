@@ -3,6 +3,8 @@ import "./index.css"
 import Title from "../../UI/Title"
 import { useRef } from "react"
 import { useRepository } from "../../../contexts/RepositoryContext"
+import Input from "../../UI/Input"
+import Submit from "../../UI/Submit"
 
 export const RepoForm = () =>{
     const repositoryInputRef = useRef<HTMLInputElement>(null!)
@@ -22,27 +24,24 @@ export const RepoForm = () =>{
         <form className="repository-form" onSubmit={handleSubmit}>
             <Title className="repository-form-title">Browser</Title>
             <div className="repository-inputs">
-                <div className="input-container">
-                    <input
-                        ref={repositoryInputRef}
-                        defaultValue={repository.name}
-                        placeholder="Repository"
-                        className="input input-owner"
-                    />
-                </div>
-                <div className="input-container">
-                    <input
-                        ref={ownerInputRef}
-                        defaultValue={repository.owner}
-                        placeholder="Owner"
-                        className="input input-owner"
-                    />
-                </div>
+                <Input
+                    className="input-owner"
+                    ref={repositoryInputRef}
+                    defaultValue={repository.name}
+                    placeholder="Repository"
+                />
+                <Input
+                    className="input-owner"
+                    ref={ownerInputRef}
+                    defaultValue={repository.owner}
+                    placeholder="Repository"
+                />
             </div>
-            <div className="submit-container">
-                <div className="sub-btn" />
-                <button type="submit" className="submit-btn repo-form-submit">Submit</button>
-            </div>
+            <Submit
+                label="Submit"
+                onClick={handleSubmit}
+                className="repo-form-submit"
+            />
         </form>
     )
 }
