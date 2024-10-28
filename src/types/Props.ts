@@ -8,8 +8,6 @@ export type Repository = {
 export type Modal = {
     i: number
     visible: boolean
-    x: number
-    y: number
 }
 
 export type ParentProps = {

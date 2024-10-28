@@ -5,23 +5,32 @@ import { useRef } from "react"
 import { useRepository } from "../../../contexts/RepositoryContext"
 import Input from "../../UI/Input"
 import Submit from "../../UI/Submit"
+import { useAlert } from "../../../contexts/AlertContext"
+import Alert from "../../UI/Alert"
 
 export const RepoForm = () =>{
     const repositoryInputRef = useRef<HTMLInputElement>(null!)
     const ownerInputRef = useRef<HTMLInputElement>(null!)
+
     const { repository, setRepository } = useRepository()
+    const { setNewAlert } = useAlert()
+
     const navigate = useNavigate()
 
     const handleSubmit = () =>{
-        setRepository({
-            name: repositoryInputRef.current.value,
-            owner: ownerInputRef.current.value,
-        })
+        const name = repositoryInputRef.current.value
+        const owner = ownerInputRef.current.value
+
+        if(name === "" || name === " ") { setNewAlert("Repository name must not be an empty string"); return; }
+        if(owner === "" || owner === " ") { setNewAlert("Repository owner name must not be an empty string"); return; }
+
+        setRepository({ name, owner })
         navigate('/issues')
     }
 
     return (
         <form className="repository-form" onSubmit={handleSubmit}>
+            <Alert />
             <Title className="repository-form-title">Browser</Title>
             <div className="repository-inputs">
                 <Input

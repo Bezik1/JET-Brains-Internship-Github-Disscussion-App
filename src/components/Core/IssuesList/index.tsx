@@ -10,10 +10,13 @@ import LoadingGate from "../../UI/LoadingGate"
 import { motion } from "framer-motion"
 import PrevArrow from "../../SVG/PrevArrow"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
+import { useAlert } from "../../../contexts/AlertContext"
 
 const IssuesList = ({ name, owner } : Repository) =>{
     const navigate = useNavigate()
-    const { data: issues, loading } = useFetch<IssueResponse[]>(`/repos/${owner}/${name}/issues`)
+    const { setNewAlert } = useAlert()
+    const { data: issues, loading, err } = useFetch<IssueResponse[]>(`/repos/${owner}/${name}/issues`)
 
     const showUpVariants = {
         hidden: { opacity: 0, y: 20, scale: 0.8 },
@@ -24,6 +27,13 @@ const IssuesList = ({ name, owner } : Repository) =>{
             transition: { delay: i * 0.2 }
         }),
     };
+
+    useEffect(() =>{
+        if(err == null) return;
+
+        setNewAlert("Couldn't find repository")
+        navigate("/")
+    }, [err])
 
     console.log(issues)
 
