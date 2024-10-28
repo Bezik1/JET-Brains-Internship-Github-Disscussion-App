@@ -34,9 +34,10 @@ Initially, I faced challenges with formatting comments in Markdown. However, by 
 To get started with the project, clone the repository and install the dependencies:
 
 ## 🚀 Run
-To run application you must type `npm run dev`
+To run application you must type:
 
 ```bash
 git clone https://github.com/Bezik1/JET-Brains-Internship-Github-Disscussion-App.git
 cd JET-Brains-Internship-Github-Disscussion-App
 npm install
+npm run dev
