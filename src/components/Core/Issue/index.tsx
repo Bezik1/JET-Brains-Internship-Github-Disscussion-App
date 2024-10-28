@@ -15,7 +15,7 @@ const Issue = ({ id, reactions, title, body, created_at, user, i, number, state 
 
     return (
         <>
-            <div className="issue" onClick={e => openModal(e, i)}>
+            <div className="issue" onClick={() => openModal(i)}>
                 <img className="issue-img" src={user.avatar_url} />
                 <div className="card-info">
                     <TextTitle className="issue-title" title={title} />

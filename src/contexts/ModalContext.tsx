@@ -28,7 +28,7 @@ export const useModal = () =>{
 
     if(typeof setModal === 'undefined') throw new Error('Element is outside Modal Provider')
 
-    const openModal = (event: React.MouseEvent, i: number) => {
+    const openModal = (i: number) => {
         setModal({
             i,
             visible: true,
