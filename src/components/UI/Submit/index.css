@@ -13,3 +13,33 @@
     margin-top: -0.8%;
     border: 2px dashed #f119cd;
 }
+
+.submit-btn {
+    z-index: 2;
+    transition: .5s;
+    width: 16vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+    color: #f119cd;
+    border: 2px solid #f119cd;
+    background-color: transparent;
+    font-family: "Roboto" sans-serif;
+    padding: 2px;
+}
+
+.submit-container:hover .submit-btn {
+    transition: .5s;
+    color: #451cfb;
+    border-color: #451cfb;
+    transform: translate(10px, -10px);
+}
+
+.submit-container:hover .sub-btn {
+    transition: .5s;
+    border-color: #451cfb;
+    transform: translate(-10px, 10px);
+}
